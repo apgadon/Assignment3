@@ -4,7 +4,7 @@
 package edu.cpp.cs.cs141.assignment_3;
 
 /**
- * @author Kataki
+ * @author Angela Gadon
  *
  */
 public class Main {

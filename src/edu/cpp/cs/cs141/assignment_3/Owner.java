@@ -17,4 +17,8 @@ public class Owner {
 		address = a;
 		phone = p;
 	}
+	
+	public String getName() {
+		return name;
+	}
 }

@@ -17,5 +17,12 @@ public class Animal {
 	private String[] vaccinations;
 	private Appointment[] appointments;
 	
+	public Owner getOwner() {
+		return own;
+	}
+	
+	public Appointment[] getAppointments() {
+		return appointments;
+	}
 	
 }

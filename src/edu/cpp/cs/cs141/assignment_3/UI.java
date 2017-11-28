@@ -4,12 +4,33 @@ public class UI {
 
 	public Animal[] patients;
 	public Appointment[] schedule;
-	int listLength;	//amount of appointments for all animals
 	
-	public Appointment[] listAppointments() {
-		Appointment[] allAppts = new Appointment[listLength];
-		//for each animal, add all appointments
-		return allAppts;
+	public UI(Animal[] p) {	//only takes in animals
+		patients = p;
+		int listLength = 0;
+		
+		for(Animal a : patients) {	//goes through every animal in list
+			listLength += a.getAppointments().length;	//adds all appointments for this animal to length
+		}
+		
+		schedule = new Appointment[listLength];
+		int count = 0;
+		
+		for(Animal a : patients) {
+			for(Appointment b : a.getAppointments()) {
+				schedule[count] = b;	//adds each of this animal's appointments to schedule
+				count++;
+			}
+		}
+		
+	}
+	
+	public void listAppointments() {
+		for(Appointment p : schedule) {
+			System.out.println("Name: " + p.getClient().getName()
+					+ "\tDate: " + p.getDate().toString()
+					+ "\tTime: " + p.getTime().toString() );
+		}
 	}
 	
 	public void resolveAppointment(Appointment toRemove) {

@@ -10,6 +10,7 @@ package edu.cpp.cs.cs141.assignment_3;
 public class Appointment {
 	int[] date;
 	int[] time;
+	Animal client;
 	
 	public Appointment(int month, int day, int year, int hour, int minute){
 		date = new int[3];
@@ -20,5 +21,17 @@ public class Appointment {
 		time = new int[2];
 		time[0] = hour;
 		time[1] = minute;
+	}
+	
+	public int[] getDate() {
+		return date;
+	}
+	
+	public int[] getTime() {
+		return time;
+	}
+	
+	public Animal getClient() {
+		return client;
 	}
 }

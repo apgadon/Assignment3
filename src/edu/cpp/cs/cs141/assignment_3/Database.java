@@ -1,11 +1,11 @@
 package edu.cpp.cs.cs141.assignment_3;
 
-public class UI {
+public class Database {
 
 	public Animal[] patients;
 	public Appointment[] schedule;
 	
-	public UI(Animal[] p) {	//only takes in animals
+	public Database(Animal[] p) {	//only takes in animals
 		patients = p;
 		int listLength = 0;
 		

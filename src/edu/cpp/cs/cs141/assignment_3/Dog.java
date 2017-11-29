@@ -9,6 +9,6 @@ package edu.cpp.cs.cs141.assignment_3;
  */
 public class Dog extends Animal{
 //lol woof
-	private String furColor;
+	
 
 }

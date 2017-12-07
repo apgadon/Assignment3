@@ -11,14 +11,21 @@ import java.io.IOException;
  */
 public class Animal {
 	
-	public static enum Disease{NAME, STATUS};
-	
 	private String name;
 	private Owner own;
 	private int age;
 	private Disease[] medicalHistory;
 	private String[] vaccinations;
 	private Appointment[] appointments;
+	
+	public Animal(String n, Owner o, int a, Disease[] m, String[] v, Appointment[] ap) {
+		name = n;
+		own = o;
+		age = a;
+		medicalHistory = m;
+		vaccinations = v;
+		appointments = ap;
+	}
 	
 	public String getName() {
 		return name;

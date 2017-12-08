@@ -25,8 +25,6 @@ public class Database {
 		
 	}
 
-
-	
 	public void resolveAppointment(Appointment toRemove) {
 		//int removeInd = searchAppointments(toRemove.getClient().getOwner().getName());
 		//use searchAppointment to find toRemove <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

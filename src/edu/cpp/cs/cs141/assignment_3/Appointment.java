@@ -12,7 +12,9 @@ public class Appointment {
 	int[] time;
 	Animal client;
 	
-	public Appointment(int month, int day, int year, int hour, int minute){
+	public Appointment(Animal c, int month, int day, int year, int hour, int minute){
+		client = c;
+		
 		date = new int[3];
 		date[0] = month;
 		date[1] = day;

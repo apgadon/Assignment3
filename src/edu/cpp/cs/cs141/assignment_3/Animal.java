@@ -40,7 +40,7 @@ public class Animal {
 	}
 	
 	public Disease getDisease(int i) {	//returns one disease at index i
-		if(i < medicalHistory.length && i > 0)
+		if(i < medicalHistory.length && i >= 0)
 			return medicalHistory[i];
 		return null;
 	}

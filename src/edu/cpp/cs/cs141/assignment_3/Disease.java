@@ -15,4 +15,12 @@ public class Disease {
 		name = n;
 		status = s;
 	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public boolean getStatus() {
+		return status;
+	}
 }

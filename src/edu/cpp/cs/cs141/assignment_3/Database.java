@@ -2,8 +2,9 @@ package edu.cpp.cs.cs141.assignment_3;
 
 public class Database {
 
-	public Animal[] patients;
-	public Appointment[] schedule;
+	private Animal[] patients;
+	private Appointment[] schedule;
+	private int scheduleLength;
 	
 	public Database(Animal[] p) {	//only takes in animals
 		patients = p;
@@ -23,12 +24,23 @@ public class Database {
 			}
 		}
 		
+		scheduleLength = schedule.length; 
 	}
 
 	public void resolveAppointment(Appointment toRemove) {
-		//int removeInd = searchAppointments(toRemove.getClient().getOwner().getName());
-		//use searchAppointment to find toRemove <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-		//create a new array (IS THIS LEGAL?) with -1 length. Set schedule ==.
+		int index = -1;
+		for (int i = 0; i < scheduleLength; i++) {
+			if (toRemove == schedule[i]) {
+				index = i;
+				break;
+			}
+		}
+		
+		if(true) {
+			for(int j = index; j < scheduleLength - 1; j++) {
+				schedule[j] = schedule[j + 1];	//increment other appointments to "delete" appointment
+			}
+		}
 	}
 	
 	public int[] searchAppointments(String ownerName) {	//returns int[] of indexes of desired appointments
@@ -40,7 +52,7 @@ public class Database {
 		
 		int[] toReturn = new int[retLen];
 		int count = 0;
-		for (int i = 0; i < schedule.length; i++) {	//for each animal in patients
+		for (int i = 0; i < scheduleLength; i++) {	//for each animal in patients
 			if(schedule[i].getClient().getOwner().getName().equalsIgnoreCase(ownerName)) {
 				toReturn[count] = i;
 				count++;

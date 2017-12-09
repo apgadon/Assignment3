@@ -4,9 +4,15 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
- * 
- * @author Angela Gadon
+ * CS 141: Intro to Programming and Problem Solving
+ * Professor: Edwin Rodr&iacute;guez
  *
+ * Programming Assignment #3
+ *
+ * A collection of appointments at a veterinary office.
+ * Can add, remove, sort, save, and load data.
+ *
+ * Angela Gadon
  */
 
 /**
@@ -55,36 +61,19 @@ public class Database {
 		
 	}
 	
-	public Appointment[] searchAppointments(String ownerName) {	//returns int[] of indexes of desired appointments
+	public Appointment[] searchOwnerAppointments() {
 		Arrays.sort(schedule, new AppointmentOwnerComparator());
 		return schedule;
 	}
 	
-	public Appointment[] searchAppointments(int m, int d, int y, int hr, int min) {//overload by dat
+	public Appointment[] searchDateAppointments() {
 		Arrays.sort(schedule, new AppointmentDateComparator());
 		return schedule;
 		
 	}
-
-	public void printAppointments(Appointment[] list) {	//print appointments by list of appts
-		for(Appointment p : list) {
-			System.out.println("Name: " + p.getClient().getName()
-					+ "\tDate: " + p.getDate().toString()
-					+ "\tTime: " + p.getTime().toString() );
-		}
-	}
 	
-	public void printAppointments(int[] list) {	//print appointments by list of indexes int
-		int count = 0;	//for incrementing through list
-		
-		for(int i = 0; i < schedule.length; i++) {
-			if(i == list[count]) {
-				System.out.println("Name: " + schedule[i].getClient().getName()
-						+ "\tDate: " + schedule[i].getDate().toString()
-						+ "\tTime: " + schedule[i].getTime().toString() );
-				count++;	//increment to next desired index
-			}
-		}
+	public Appointment[] getAppointments() {
+		return schedule;
 	}
 
 }

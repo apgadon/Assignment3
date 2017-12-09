@@ -6,8 +6,15 @@ package edu.cpp.cs.cs141.assignment_3;
 import java.util.Comparator;
 
 /**
- * @author Angela Gadon
+ * CS 141: Intro to Programming and Problem Solving
+ * Professor: Edwin Rodr&iacute;guez
  *
+ * Programming Assignment #3
+ *
+ * A collection of appointments at a veterinary office.
+ * Can add, remove, sort, save, and load data.
+ *
+ * Angela Gadon
  */
 
 /**
@@ -18,7 +25,7 @@ public class AppointmentDateComparator implements Comparator<Appointment>{
 /**
  * Returns 0 if equal, otherwise the difference between the first different digit of x and y
  */
-	public int compare(Appointment x, Appointment y) {	//[month][day][year] [hour][minute]
+	public int compare(Appointment x, Appointment y) {	//[month][day][year]
 		
 		if(x.getDate()[2] == y.getDate()[2]) {	//year
 			if(x.getDate()[0] == y.getDate()[0]) {	//month

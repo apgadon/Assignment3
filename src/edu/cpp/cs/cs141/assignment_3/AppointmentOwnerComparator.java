@@ -2,7 +2,23 @@ package edu.cpp.cs.cs141.assignment_3;
 
 import java.util.Comparator;
 
+/**
+ * CS 141: Intro to Programming and Problem Solving
+ * Professor: Edwin Rodr&iacute;guez
+ *
+ * Programming Assignment #3
+ *
+ * A collection of appointments at a veterinary office.
+ * Can add, remove, sort, save, and load data.
+ *
+ * Angela Gadon
+ */
 
+/**
+ * Class that compares Appointments by Owner name alphabetically.
+ * Contains only an implementation of Comparator's compare.
+ *
+ */
 public class AppointmentOwnerComparator implements Comparator<Appointment>{
 	public int compare(Appointment x, Appointment y) {
 		String xName = x.getClient().getOwner().getName();

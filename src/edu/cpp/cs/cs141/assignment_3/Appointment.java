@@ -4,8 +4,20 @@
 package edu.cpp.cs.cs141.assignment_3;
 
 /**
- * @author Kataki
+ * CS 141: Intro to Programming and Problem Solving
+ * Professor: Edwin Rodr&iacute;guez
  *
+ * Programming Assignment #3
+ *
+ * A collection of appointments at a veterinary office.
+ * Can add, remove, sort, save, and load data.
+ *
+ * Angela Gadon
+ */
+
+/**
+ * Class representing the entity Appointment, containing the date, time, and client (animal).
+ * Contains setter methods to access its attributes.
  */
 public class Appointment {
 	int[] date;

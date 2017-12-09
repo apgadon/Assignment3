@@ -17,26 +17,24 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		
-		Appointment[] a = new Appointment[2];
-		//int month, int day, int year, int hour, int minute
-		String[] vaccin = new String[2];
+		//Setting up diseases in an array for testing.
 		Disease[] m = new Disease[3];
-		Disease meml = new Disease("measles", true);
-		m[0] = meml;
-		m[1] = meml;
+		m[0] = new Disease("fever", true);
+		m[1] = new Disease("fleas", true);
+		m[2] = new Disease ("heartworm", true);
+		
+		String[] vaccin = new String[2];
+		
+		
 		dType x = dType.COLLIE;
 		Owner own = new Owner();
-		Dog testl = new Dog("fuckin ", own, 23, m, vaccin, a, x);
-		Appointment app1 = new Appointment(testl, 1, 4, 1963, 12, 10);
-		Appointment app2 = new Appointment(testl, 1, 4, 1963, 12, 10);
-		a[0] = app1;
-		a[1] = app2;
-		
-		Appointment[] t = testl.getAppointments();
+		Dog dog1 = new Dog("Fido", own, 23, m, vaccin, a, x);
+		Appointment app1 = new Appointment(dog1, 1, 4, 1963, 12, 10);
+		Appointment app2 = new Appointment(dog1, 1, 4, 1963, 12, 10);
+
+		Appointment[] t = dog1.getAppointments();
 		System.out.println(t[0].getClient().getName());
 		
-		System.out.println(t[0].getDate()[1]);
 	}
 
 }

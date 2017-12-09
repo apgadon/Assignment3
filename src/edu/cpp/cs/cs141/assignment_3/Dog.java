@@ -8,7 +8,6 @@ package edu.cpp.cs.cs141.assignment_3;
  *
  */
 public class Dog extends Animal{
-//lol woof
 	public static enum dType{LAB, POODLE, PUG, TERRIER, COLLIE};
 	public dType dt;	//may bring problems with fishtype
 	

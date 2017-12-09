@@ -1,5 +1,17 @@
 package edu.cpp.cs.cs141.assignment_3;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+/**
+ * 
+ * @author Angela Gadon
+ *
+ */
+
+/**
+ * Class representing the "engine" holding all appointments. Can add, remove, search, and print from this class.
+ */
 public class Database {
 
 	private Animal[] patients;
@@ -27,58 +39,50 @@ public class Database {
 		scheduleLength = schedule.length; 
 	}
 
+	public void addAppointment(Appointment toAdd) {	//adds new Appointment to end of list.
+		scheduleLength++;
+		Appointment[] hold = new Appointment[scheduleLength];
+		for(int i = 0; i < schedule.length; i++) {
+			hold[i] = schedule[i];
+		}
+		hold[scheduleLength - 1] = toAdd;
+		schedule = hold;							//!!!NOT SURE IF LEGAL. Check if bound exception.
+	}
+	
 	public void resolveAppointment(Appointment toRemove) {
 		int index = -1;
+		Appointment[] hold = schedule;
 		for (int i = 0; i < scheduleLength; i++) {
-			if (toRemove == schedule[i]) {
+			if (toRemove == hold[i]) {
 				index = i;
 				break;
 			}
 		}
-		
-		if(true) {
+		if(index != -1) {
 			for(int j = index; j < scheduleLength - 1; j++) {
-				schedule[j] = schedule[j + 1];	//increment other appointments to "delete" appointment
+				hold[j] = hold[j + 1];	//increment other appointments to "delete" appointment
 			}
-		}
-	}
-	
-	public int[] searchAppointments(String ownerName) {	//returns int[] of indexes of desired appointments
-		int retLen = 0;	//length of to-be-made int[] of indexes
-		for(Animal e : patients) {
-			if(e.getOwner().getName().equalsIgnoreCase(ownerName))
-				retLen += e.getAppointments().length;	//adds how many appts this animal has
+			scheduleLength--;
+			schedule = new Appointment[scheduleLength];	//schedule is now 1 element smaller
+			
+			for(int i = 0; i < scheduleLength; i++) {
+				schedule[i] = hold[i];
+			}
 		}
 		
-		int[] toReturn = new int[retLen];
-		int count = 0;
-		for (int i = 0; i < scheduleLength; i++) {	//for each animal in patients
-			if(schedule[i].getClient().getOwner().getName().equalsIgnoreCase(ownerName)) {
-				toReturn[count] = i;
-				count++;
-			}
-		}
-		return toReturn;
 	}
 	
-	public Appointment[] searchAppointments(int m, int d, int y) {//overload by date
-		int numAppts = 0;
-		for(Appointment a : schedule) {
-			if(true)//COMPARATOR to get number of
-				numAppts++;
-		}
+	public Appointment[] searchAppointments(String ownerName) {	//returns int[] of indexes of desired appointments
+		Arrays.sort(schedule, new AppointmentOwnerComparator());
+		return schedule;
+	}
+	
+	public Appointment[] searchAppointments(int m, int d, int y, int hr, int min) {//overload by dat
+		Arrays.sort(schedule, new AppointmentDateComparator());
+		return schedule;
 		
-		Appointment[] toReturn = new Appointment[numAppts];
-		int count = 0;
-		for(Appointment a : schedule) {
-			if(true) {//COMPARATOR "
-				toReturn[count] = a;
-				count++;
-			}
-		}
-		return toReturn;
 	}
-	
+
 	public void printAppointments(Appointment[] list) {	//print appointments by list of appts
 		for(Appointment p : list) {
 			System.out.println("Name: " + p.getClient().getName()
@@ -99,5 +103,5 @@ public class Database {
 			}
 		}
 	}
-	
+
 }

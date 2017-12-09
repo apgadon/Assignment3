@@ -5,8 +5,13 @@ package edu.cpp.cs.cs141.assignment_3;
 
 
 /**
- * @author Kataki
+ * @author Angela Gadon
  *
+ */
+
+/**
+ * Class representing Animal subclass Bird. 
+ * Contains enumerated class bType, containing 5 varieties of bird.
  */
 public class Bird extends Animal{
 

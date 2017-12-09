@@ -9,7 +9,7 @@ package edu.cpp.cs.cs141.assignment_3;
  */
 public class Dog extends Animal{
 	public static enum dType{LAB, POODLE, PUG, TERRIER, COLLIE};
-	public dType dt;	//may bring problems with fishtype
+	public dType dt;
 	
 	public Dog(String n, Owner o, int a, Disease[] m, String[] v, Appointment[] ap, dType t) {
 		super(n, o, a, m, v, ap);

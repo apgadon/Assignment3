@@ -13,29 +13,12 @@ import java.util.Arrays;
  * Class representing the "engine" holding all appointments. Can add, remove, search, and print from this class.
  */
 public class Database {
-
-	private Animal[] patients;
+	
 	private Appointment[] schedule;
 	private int scheduleLength;
 	
-	public Database(Animal[] p) {	//only takes in animals
-		patients = p;
-		int listLength = 0;
-		
-		for(Animal a : patients) {	//goes through every animal in list
-			listLength += a.getAppointments().length;	//adds all appointments for this animal to length
-		}
-		
-		schedule = new Appointment[listLength];
-		int count = 0;
-		
-		for(Animal a : patients) {
-			for(Appointment b : a.getAppointments()) {
-				schedule[count] = b;	//adds each of this animal's appointments to schedule
-				count++;
-			}
-		}
-		
+	public Database() {	//initial schedule of none
+		schedule = new Appointment[0];
 		scheduleLength = schedule.length; 
 	}
 

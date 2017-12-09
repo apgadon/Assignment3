@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 
 /**
- * Class representing the Animal Entity. Contains anima's name, owner, age, history, vaccines, and appointments.
+ * Class representing the Animal Entity. Contains anima's name, owner, age, history, vaccinations, and appointments.
  * Can return these field variables in its setter methods.
  */
 public class Animal {

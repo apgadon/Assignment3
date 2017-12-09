@@ -35,6 +35,8 @@ public class Main {
 		
 		Appointment[] t = testl.getAppointments();
 		System.out.println(t[0].getClient().getName());
+		
+		System.out.println(t[0].getDate()[1]);
 	}
 
 }
